@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Recipe CRUD App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, you will build a Recipe tracking app. The app will allow a user to add new recipes, display a list of recipes and delete a recipe from the list by clicking a delete button. You will also be asked to add styling as provided in the mockup.
 
-## Available Scripts
+![Example Layout](https://github.com/gabrielsanchez/erddiagram/blob/main/deliciousfoods.png?raw=true)
 
-In the project directory, you can run:
+This project has starter code you can use for the application. You will need to add handlers and other logic to make this code work.
 
-### `npm start`
+## Specific Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Find the `TODO` comments in the code and create the necessary functionality. Below is a list of specific items you will need to complete for this lesson.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The app will display a recipe's name, cuisine, photo, ingredients, preparation instructions and action buttons (edit and delete).
+- You should create at least one additional component that is used by the `RecipeList` component.
+- The app does not need to match the exact appearance of the mockup, but should be similar and pass the styling tests.
+- You should add handlers and other attributes to the starter code as needed.
 
-### `npm test`
+To create a recipe entry, your app will need to have a form with input fields for the name of the dish, the cuisine it belongs to, and an URL that points to a picture of the dish. Use `<textarea>` for the ingredients and preparation. For the tests to pass, use the following names for your inputs: `<input name="name">`, `<input name="cuisine">`, `<input name="photo">`, `<textarea name="ingredients">` and `<textarea name="preparation">`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Input Area](https://github.com/gabrielsanchez/erddiagram/blob/main/create-recipe.png?raw=true)
 
-### `npm run build`
+To read and display the list of recipes use the table structure that is provided in the starter code. Each recipe should display the name, cuisine, photo, ingredients, preparation and a delete button as shown below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![recipe Area](https://github.com/gabrielsanchez/erddiagram/blob/main/recipeapplist.png?raw=true)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clicking the delete button should remove the entire row/recipe from the list. For the tests to pass, make sure that the `delete` button has delete as a name value `(name="delete")`. e.g. `<button name="delete" onClick={deleteRecipe}>Delete</button>`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Styling Instructions
 
-### `npm run eject`
+The `Delicious Food Recipes` text surrounded by an `h1` tag should use the `'Playfair Display SC'` font that has already been imported in `App.css`. It should also be `centered` and have a size of `64px`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Read the [documentation for nth-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child). Use `nth-child` to set the width of the columns. It is suggested that you set the `width` for the preparation and ingredients columns to `30%`. For the rest of the columns, set the width to `10%`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Use `nth-child(odd)` to set the table's zebra striping color pattern for the rows in `tbody`. The color in the mockup is `#fff0c7` but feel free to use a color of your preference that suits the design.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The preparation and ingredient columns should display a scrollbar if there is too much text. Use the predefined `content_td` class and `p` tag to wrap the text so that it uses a scrollbar if the text is too long (such as `<td className="content_td"><p>{(recipe.ingredients)}</p></td>` ).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Use the [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) property to `scale-down` the images and set the image `width` and `height` to `100%`.
 
-## Learn More
+## Success Criteria
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Functionality:
+    * User can create a recipe entry.
+    * User can read the list of recipes.
+    * User can delete a recipe.
+    * CSS is used to make the app look like the mockup.
+- React Code Organization:
+    * Uses multiple components that play well together.
+    * Recipe data is contained in the state.
+- General Code Organization:
+    * Minimal code duplication
