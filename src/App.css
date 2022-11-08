@@ -11,6 +11,9 @@ label {
 
 header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Playfair Display SC', 'Rock Salt';
+  text-align: center;
+  font-size: 1.5em;
 }
 
 /* typography */
@@ -58,3 +61,24 @@ table {
 
 
 /* Column size for tbody */
+.single {
+  width: 10%;
+}
+
+.double {
+  width: 30%;
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.orange {
+  background-color: #fff0c7;
+}
+
+.white {
+  background-color: white;
+}
